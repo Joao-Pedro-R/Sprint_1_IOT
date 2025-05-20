@@ -9,7 +9,7 @@ Sprint 1 de IOT dos alunos Daniel Akiyama, Danilo Correa e João Pedro R
 
 ![image](https://github.com/user-attachments/assets/eab7924d-49c6-4589-9236-2ca9680b602a)
 
-![image](https://github.com/user-attachments/assets/62aeee67-dd72-491f-940c-c4de4cb0295d)
+![Capture](https://github.com/user-attachments/assets/a6810f0b-65e5-4ef5-8adc-980c0f274bcb)
 
 Texto para utilizar no roteiro e para mostrar aqui no read.me:
 🔁 Fluxo resumido do projeto:
