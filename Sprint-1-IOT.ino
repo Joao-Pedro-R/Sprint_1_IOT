@@ -4,7 +4,7 @@
 
 const char* ssid = "FIAP-IOT"; //Utilizar o wifi da sua área
 const char* password = "****"; 
-const char* mqtt_server = "broker.hivemq.com";  // ex: 192.168.0.100
+const char* mqtt_server = "broker.hivemq.com";
 
 WiFiClient espClient;
 PubSubClient client(espClient);
@@ -34,24 +34,21 @@ void setup_wifi() {
 }
 
 void reconnect() {
-  // Loop until we're reconnected
+
   while (!client.connected()) {
     Serial.print("Tentando conexão MQTT...");
     String clientId = "ESP32Client-";
-    // Create a random client ID
     clientId += String(random(0xffff), HEX);
-    // Attempt to connect
+
     if (client.connect(clientId.c_str())) {
       Serial.println("conectado");
-      // Once connected, publish an announcement...
       client.publish("SPRINT1DDJ/IN", "Iniciando transferencias...");
-      // ... and resubscribe
       client.subscribe("SPRINT1DDJ/OUT");
     } else {
       Serial.print("falhou, rc=");
       Serial.print(client.state());
       Serial.println(" tente novamente em 5 segundos");
-      // Wait 5 seconds before retrying
+      
       delay(5000);
     }
   }
