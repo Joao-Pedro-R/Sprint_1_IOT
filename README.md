@@ -1,8 +1,6 @@
 # Sprint_1_IOT
 Sprint 1 de IOT dos alunos Daniel Akiyama, Danilo Correa e João Pedro R
 
-![image](https://github.com/user-attachments/assets/1dd89315-5209-4fdd-9029-db99136875fc)
-
 Colocar QR code no pátio, tirar quando sair
 ---
 
@@ -53,6 +51,8 @@ Receber os dados publicados pelo ESP32 no tópico leitura/qr via MQTT, exibir no
 - Um broker MQTT acessível (broker.hivemq.com)
 
 - Dashboard instalado via Manage Palette (node-red-dashboard)
+
+![image](https://github.com/user-attachments/assets/1dd89315-5209-4fdd-9029-db99136875fc)
 
 #### 🚧 Modelo Node-red
 [mqtt in] ---> [debug]
