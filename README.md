@@ -3,8 +3,6 @@ Sprint 1 de IOT dos alunos Daniel Akiyama, Danilo Correa e João Pedro R
 
 ![image](https://github.com/user-attachments/assets/1dd89315-5209-4fdd-9029-db99136875fc)
 
-![image](https://github.com/user-attachments/assets/be2e9ca4-231e-4c51-9833-122d941e87db)
-
 ![image](https://github.com/user-attachments/assets/eab7924d-49c6-4589-9236-2ca9680b602a)
 
 ![Capture](https://github.com/user-attachments/assets/a6810f0b-65e5-4ef5-8adc-980c0f274bcb)
@@ -61,6 +59,8 @@ Receber os dados publicados pelo ESP32 no tópico leitura/qr via MQTT, exibir no
            \
             \
              ---> [ui_text (dashboard)]
+
+![image](https://github.com/user-attachments/assets/be2e9ca4-231e-4c51-9833-122d941e87db)
 
 MQTT In: Conecta ao broker MQTT e escuta o tópico leitura/qr.
 
