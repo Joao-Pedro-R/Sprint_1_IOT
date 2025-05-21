@@ -75,3 +75,9 @@ Um broker MQTT acessível (você está usando broker.hivemq.com)
 
 --
 Colocar QR code no pátio, tirar quando sair
+--
+MQTT In: Conecta ao broker MQTT e escuta o tópico leitura/qr.
+
+Debug: Mostra os QR Codes recebidos no painel de debug.
+
+UI Text: Exibe os QR Codes recebidos em um painel web (Node-RED Dashboard).
