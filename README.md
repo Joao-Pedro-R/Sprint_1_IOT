@@ -74,3 +74,4 @@ Um broker MQTT acessível (você está usando broker.hivemq.com)
              ---> [ui_text (dashboard)]
 
 --
+Colocar QR code no pátio, tirar quando sair
