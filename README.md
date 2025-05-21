@@ -9,73 +9,59 @@ Sprint 1 de IOT dos alunos Daniel Akiyama, Danilo Correa e João Pedro R
 
 ![Capture](https://github.com/user-attachments/assets/a6810f0b-65e5-4ef5-8adc-980c0f274bcb)
 
-Texto para utilizar no roteiro e para mostrar aqui no read.me:
-🔁 Fluxo resumido do projeto:
-📷 ESP32-CAM capta imagem de uma área
+Colocar QR code no pátio, tirar quando sair
+---
 
-🔍 Ele identifica QR Codes com uma biblioteca
+## 🏗️ Estrutura do projeto
+### 🧰 Componentes necessários:
+- 1x ESP32-CAM
 
-📡 Envia os dados dos QR Codes via MQTT
+- 1x Módulo FTDI (para programar o ESP32-CAM via USB)
 
-💻 Node-RED escuta esse tópico MQTT e processa os dados
+- Broker MQTT
 
---
-✅ Captura imagens com a câmera integrada
-✅ Suporta processamento de QR Codes com bibliotecas como ESP32QRCodeReader
-✅ Tem Wi-Fi embutido para enviar dados via MQTT diretamente para o Node-RED
---
-🧰 Componentes necessários:
-1x ESP32-CAM
+- Node-RED instalado no seu PC ou Raspberry Pi
 
-1x Módulo FTDI (para programar o ESP32-CAM via USB)
+### 🔁 Fluxo resumido do projeto:
+ESP32-CAM capta imagem de uma área -->
+ Ele identifica QR Codes com uma biblioteca -->
+  Envia os dados dos QR Codes via MQTT -->
+   Node-RED escuta esse tópico MQTT e processa os dados.
 
-Fonte 5V (ou o próprio FTDI para alimentação)
+Objetivo do fluxo:
+Receber os dados publicados pelo ESP32 no tópico leitura/qr via MQTT, exibir no debug e em um dashboard.
 
-Broker MQTT (ex: Mosquitto, pode rodar no mesmo PC do Node-RED)
+- Conecta ao Wi-Fi (FIAP-IOT)
 
-Node-RED instalado no seu PC ou Raspberry Pi
+- Se conecta ao broker MQTT público (broker.hivemq.com)
 
---
-💻 Código básico para ESP32-CAM com detecção de QR Code e envio via MQTT:
-Você pode usar bibliotecas como:
+- Usa a biblioteca ESP32QRCodeReader para detectar QR Codes
 
-ESP32QRCodeReader → para detectar QR Codes
+- Publica os dados dos QR Codes no tópico MQTT leitura/qr
 
-PubSubClient → para MQTT
+- Se inscreve no tópico SPRINT1DDJ/OUT e imprime no serial caso receba mensagens (via callback())
 
-WiFi.h → para Wi-Fi
---
-✅ O que esse código faz corretamente:
-Conecta ao Wi-Fi (FIAP-IOT)
+### 📚 Bibliotecas
+- ESP32QRCodeReader: para detectar QR Codes
 
-Se conecta ao broker MQTT público (broker.hivemq.com)
+- PubSubClient: para MQTT
 
-Usa a biblioteca ESP32QRCodeReader para detectar QR Codes
+- WiFi.h: para Wi-Fi
 
-Publica os dados dos QR Codes no tópico MQTT leitura/qr
+### 🟥 NODE-RED
+#### 🧰 Pré-requisitos
+- Node-RED instalado e em execução (http://localhost:1880)
 
-Se inscreve no tópico SPRINT1DDJ/OUT e imprime no serial caso receba mensagens (via callback())
---
-Você está com um código totalmente funcional para um projeto com ESP32-CAM, leitura de QR Code e envio via MQTT para o Node-RED.
---
-✅ Objetivo do fluxo:
-Receber os dados publicados pelo ESP32 no tópico leitura/qr via MQTT, exibir no debug e (opcionalmente) em um dashboard.
+- Um broker MQTT acessível (broker.hivemq.com)
 
-🧰 Pré-requisitos:
-Node-RED instalado e em execução (geralmente em http://localhost:1880)
+- Dashboard instalado via Manage Palette (node-red-dashboard)
 
-Um broker MQTT acessível (você está usando broker.hivemq.com)
-
-(Opcional) Dashboard instalado via Manage Palette (node-red-dashboard)
---
+#### 🚧 Modelo Node-red
 [mqtt in] ---> [debug]
            \
             \
              ---> [ui_text (dashboard)]
 
---
-Colocar QR code no pátio, tirar quando sair
---
 MQTT In: Conecta ao broker MQTT e escuta o tópico leitura/qr.
 
 Debug: Mostra os QR Codes recebidos no painel de debug.
