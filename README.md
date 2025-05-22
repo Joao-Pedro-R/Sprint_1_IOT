@@ -1,5 +1,12 @@
 # Sprint_1_IOT
 
+## 👨‍💻 Integrantes do Grupo
+| Nome           | RM        |
+|----------------|-----------|
+| Daniel Akiyama | RM 558263 |
+| Danilo Correia | RM 557540 |
+| João Pedro R   | RM 558199 |
+
 ## 🏗️ Estrutura do projeto
 ### 🧰 Componentes necessários:
 - 1x ESP32-CAM
